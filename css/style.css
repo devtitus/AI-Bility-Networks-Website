@@ -96,7 +96,7 @@ body {
 }
 
 section {
-  height: calc(100vh - 58px);
+  min-height: calc(100vh - 58px);
   align-content: center;
 }
 
@@ -294,3 +294,46 @@ nav,
   padding: var(--spacing-14px) var(--spacing-18px);
   border: 1px solid var(--primary-color);
 }
+
+/*------------------ Highlights Section ------------------- */
+
+.highlights-wrapper {
+  gap: var(--spacing-56px);
+}
+
+.left-higlights-wrapper {
+  width: 50%;
+  gap: var(--spacing-32px);
+  justify-content: center;
+}
+
+.highlights-btn-wrapper {
+  gap: var(--spacing-16px);
+}
+
+.highlights-btn {
+  padding: var(--spacing-14px) var(--spacing-18px);
+  border: 1px solid var(--primary-color);
+}
+
+.highlights-card {
+  gap: var(--spacing-20px);
+}
+
+.highlights-txt-wrapper {
+  gap: var(--spacing-16px);
+}
+
+.right-highlights-wrapper {
+  gap: var(--spacing-40px);
+  width: 50%;
+  height: 433px;
+}
+
+.highlight-card-container {
+  justify-content: space-between;
+  align-self: stretch;
+  flex: 1 0 0;
+}
+
+
