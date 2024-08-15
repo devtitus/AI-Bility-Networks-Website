@@ -4,6 +4,8 @@
   --spacing-12px: 0.75rem;
   --spacing-14px: 0.875rem;
   --spacing-16px: 1rem;
+  --spacing-18px: 1.125rem;
+  --spacing-20px: 1.25rem;
   --spacing-24px: 1.5rem;
   --spacing-32px: 2rem;
   --spacing-40px: 2.5rem;
@@ -40,6 +42,8 @@
   --primary-color: #820300;
   --white: #ffffff;
   --black: #000000;
+  --box-border-color: #ddd;
+  --logo-slide-bg-color: #f4f4f4;
 }
 
 * {
@@ -53,18 +57,16 @@ body {
   background-color: #ffffff;
 }
 
-/* Common Styles */
+/*------------------ Common Styles ------------------- */
 
 .h-flex {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
 }
 
 .v-flex {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .h-padding {
@@ -79,8 +81,14 @@ body {
 .primary-btn {
   background-color: var(--primary-color);
   color: var(--white);
+  border-radius: 6px;
 }
 
+.secondary-btn {
+  background-color: var(--white);
+  color: var(--primary-color);
+  border-radius: 6px;
+}
 .v-text-wrapper-8px {
   display: inline-flex;
   flex-direction: column;
@@ -92,7 +100,13 @@ section {
   align-content: center;
 }
 
-/* Header Styles */
+.sub-special-heading {
+  font-size: var(--typo-20px);
+  line-height: calc(var(--typo-20px) * 1.4);
+  color: var(--primary-color);
+}
+
+/*------------------ Header Section ------------------- */
 
 header {
   background: grey;
@@ -117,6 +131,16 @@ a {
   gap: 1rem;
 }
 
+nav,
+.logo,
+.nav-container {
+  align-items: center;
+}
+
+.nav-container {
+  justify-content: space-between;
+}
+
 .list-item:hover a {
   background-color: var(--primary-color);
   color: var(--white);
@@ -125,14 +149,18 @@ a {
 
 .nav-cta {
   padding: var(--spacing-8px) var(--spacing-16px);
-  border-radius: var(--border-radius-8px);
-  border: 0.2px solid var(--black);
+  border: 1px solid var(--black);
   font-size: var(--typo-14px);
   cursor: pointer;
 }
 
-/* Hero Styles */
-.hero-wrapper {
+/*------------------ Hero Section ------------------- */
+
+.hero-section {
+  gap: var(--spacing-32px);
+}
+
+.hero-top-wrapper {
   width: 100%;
   justify-content: space-between;
 }
@@ -156,8 +184,6 @@ a {
 
 .left-wrapper,
 .right-wrapper {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   width: 50%;
 }
@@ -167,9 +193,13 @@ a {
   gap: var(--spacing-16px);
 }
 
+.hero-btn-wrapper {
+  display: inline-flex;
+}
+
 .hero-btn {
   padding: var(--spacing-12px) var(--spacing-16px);
-  border-radius: var(--border-radius-8px);
+  border: none;
   cursor: pointer;
 }
 
@@ -182,4 +212,85 @@ a {
   display: flex;
   justify-content: flex-end;
   flex: 1 0 0;
+}
+
+.hb-container {
+  align-items: center;
+  gap: var(--spacing-16px);
+  border-radius: var(--border-radius-8px);
+  border: 1px solid var(--box-border-color);
+  padding: var(--spacing-16px) var(--spacing-32px);
+  background-color: var(--logo-slide-bg-color);
+  overflow-x: hidden;
+}
+
+.logo-slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-track {
+  display: flex;
+  width: calc(100% * 2); /* Double the width to accommodate two sets of logos */
+  animation: marquee 20s linear infinite;
+}
+
+.logo-group {
+  display: flex;
+  justify-content: space-around;
+  width: 50%; /* Each group takes up half of the track */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.client-logo {
+  flex-shrink: 0;
+  margin: 0 20px;
+}
+
+/*------------------ Overview Section ------------------- */
+
+.overview-wrapper {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overview-wrapper img {
+  border-radius: var(--border-radius-16px);
+}
+
+.overview-card {
+  position: absolute;
+  left: 55%;
+  right: 4%;
+  gap: var(--spacing-32px);
+  background-color: var(--white);
+  padding: 3.8rem 3.5rem;
+  border-radius: var(--border-radius-8px);
+  border: 1px solid var(--box-border-color);
+  box-shadow: 0px 1px 4px 0px rgba(25, 33, 61, 0.08);
+}
+
+.overview-btn-wrapper {
+  gap: var(--spacing-16px);
+}
+
+.overview-btn {
+  padding: var(--spacing-14px) var(--spacing-18px);
+  border: 1px solid var(--primary-color);
 }
