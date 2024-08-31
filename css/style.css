@@ -45,6 +45,7 @@
   --black: #000000;
   --box-border-color: #ddd;
   --logo-slide-bg-color: #f4f4f4;
+  --border-color: #727272;
 }
 
 * {
@@ -68,6 +69,10 @@ body {
 .v-flex {
   display: flex;
   flex-direction: column;
+}
+
+.header-padding {
+  padding: var(--spacing-12px) var(--spacing-60px);
 }
 
 .h-padding {
@@ -107,6 +112,16 @@ section {
   color: var(--primary-color);
 }
 
+.service-card-paragraph,
+.highlight-card-paragraph,
+.hightlights-txt,
+.overview-paragraph,
+.testimonial-text {
+  text-align: justify;
+  white-space: normal;
+  line-height: calc(var(--typo-16px) * 1.3);
+}
+
 /*------------------ Header Section ------------------- */
 
 header {
@@ -114,6 +129,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
+  border-bottom: 0.5px solid var(--border-color);
 }
 
 ul {
@@ -389,6 +405,9 @@ nav,
 }
 
 .testimonial-card-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   gap: var(--spacing-24px);
 }
 
@@ -482,4 +501,100 @@ nav,
 
 .cta-section-btn {
   padding: var(--spacing-14px) var(--spacing-16px);
+}
+
+/*------------------ Footer Section ------------------- */
+
+.footer-section {
+  border-top: 1px solid var(--box-border-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.f-identity-wrapper,
+.social-media-wrapper {
+  gap: var(--spacing-24px);
+}
+
+.footer-top-wrapper {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hori-divider {
+  border: 1px solid var(--primary-color);
+}
+
+.footer-container {
+  gap: var(--spacing-40px);
+}
+
+.social-media-icons {
+  gap: var(--spacing-16px);
+}
+
+.footer-bottom-wrapper {
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-16px) 0;
+}
+
+.right-text,
+.copyright-text,
+.condition,
+.privacy {
+  color: var(--primary-color);
+}
+
+.condition:hover,
+.privacy:hover {
+  text-decoration: underline;
+}
+
+/*------------------ Media Queries ------------------- */
+
+@media screen and (min-width: 1024px) {
+  /*------------------ common styles ------------------- */
+
+  section {
+    min-height: auto;
+  }
+
+  .h-padding {
+    padding-top: var(--spacing-56px);
+    padding-bottom: var(--spacing-56px);
+  }
+
+  /*------------------ Services Section ------------------- */
+  .service-card-container {
+    width: 100%;
+    gap: var(--spacing-16px);
+  }
+
+  .service-content-container img {
+    width: 197px;
+    height: 197px;
+  }
+
+  .service-card-title {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header,
+  footer {
+    width: 100%;
+    display: block;
+    text-align: -webkit-center;
+  }
+  section,
+  .footer-container,
+  .nav-container {
+    max-width: 1920px;
+  }
 }
