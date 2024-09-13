@@ -9,22 +9,39 @@
 
 <body>
 
-    <!-- Header -->
-    <header class="Navbar">
-        <div class="nav-container h-flex header-padding">
-            <div class="logo">
-                <img src="/assets/Nav-logob.svg" alt="AI-Bility Networks" width="120" height="40">
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo"><img src="/assets/Nav-logob.svg" alt="AI-Bility Networks" width="120"
+                    height="40"></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-item">Web Development</a></li>
+                        <li><a href="#" class="dropdown-item">AI Solutions</a></li>
+                        <li><a href="#" class="dropdown-item">Cloud Computing</a></li>
+                        <li><a href="#" class="dropdown-item">Consulting</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact Us</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-            <nav>
-                <ul class="h-flex menu-list">
-                    <li class="list-item"><a href="index.html">Home</a></li>
-                    <li class="list-item"><a href="about.html">About Us</a></li>
-                    <li class="list-item"><a href="services.html">Services</a></li>
-                    <li class="list-item"><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-            <button class="nav-cta primary-btn">Contact Us</button>
-        </div>
+        </nav>
     </header>
 
     <main>
@@ -384,6 +401,8 @@
                 </div>
             </div>
     </footer>
+
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

@@ -125,15 +125,19 @@ section {
 /*------------------ Header Section ------------------- */
 
 header {
-  background: grey;
+  background: white;
   position: sticky;
   top: 0;
   z-index: 999;
-  border-bottom: 0.5px solid var(--border-color);
+  border-bottom: 1px solid #e2e8f0;
 }
 
 ul {
   list-style-type: none;
+}
+
+li {
+  list-style: none;
 }
 
 a {
@@ -143,32 +147,96 @@ a {
   padding: var(--spacing-8px) var(--spacing-14px);
 }
 
-.menu-list {
+.navbar {
   display: flex;
-  gap: 1rem;
-}
-
-nav,
-.logo,
-.nav-container {
-  align-items: center;
-}
-
-.nav-container {
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
 }
 
-.list-item:hover a {
-  background-color: var(--primary-color);
-  color: var(--white);
-  border-radius: var(--border-radius-8px);
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-8px);
 }
 
-.nav-cta {
-  padding: var(--spacing-8px) var(--spacing-16px);
-  border: 1px solid var(--black);
-  font-size: var(--typo-14px);
-  cursor: pointer;
+.nav-link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #475569;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Hamburger Style */
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+/* Dropdown Menu */
+.nav-item {
+  position: relative; /* To ensure the dropdown menu is positioned relative to the parent */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  top: 100%; /* Ensures the dropdown starts just below the parent menu */
+  left: 0; /* Align the dropdown to the left of the parent item */
+  min-width: 200px; /* Ensures the dropdown has a proper width */
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  display: block;
+  padding: var(--spacing-8px) var(--spacing-14px);
+  color: #475569;
+  font-size: var(--typo-16px);
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f5f9;
+  color: var(--primary-color);
+}
+
+/* Keep dropdown visible when hovering over it */
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown .dropdown-menu:hover {
+  display: block;
+}
+
+/* Style for the dropdown toggle link */
+.dropdown-toggle::after {
+  content: " ▼";
+  font-size: 0.8rem;
+  margin-left: 5px;
+  color: #475569;
 }
 
 /*------------------ Hero Section ------------------- */
@@ -552,6 +620,44 @@ nav,
 
 /*------------------ Media Queries ------------------- */
 
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    gap: var(--spacing-16px);
+    padding: var(--spacing-40px);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
 @media screen and (min-width: 1024px) {
   /*------------------ common styles ------------------- */
 
@@ -585,6 +691,7 @@ nav,
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
   }
   header,
   footer {
@@ -593,8 +700,26 @@ nav,
     text-align: -webkit-center;
   }
   section,
-  .footer-container,
-  .nav-container {
-    max-width: 1920px;
+  .footer-container {
+    max-width: 1919px;
+  }
+  .header-padding {
+    padding: var(--spacing-18px) var(--spacing-60px);
+  }
+  .overview-wrapper img {
+    width: 1200px;
+    height: 800px;
+  }
+  .hb-container {
+    padding: var(--spacing-32px) var(--spacing-32px);
+  }
+  .testimonial-card-wrapper {
+    grid-template-columns: auto auto auto auto;
+  }
+  .service-card {
+    padding: var(--spacing-48px) var(--spacing-40px);
+  }
+  .cta-right-wrapper {
+    padding: var(--spacing-64px) var(--spacing-48px);
   }
 }
