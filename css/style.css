@@ -699,6 +699,9 @@ a {
     display: block;
     text-align: -webkit-center;
   }
+  .navbar {
+    max-width: 1919px;
+  }
   section,
   .footer-container {
     max-width: 1919px;
