@@ -806,6 +806,104 @@ a {
   height: 12px;
 }
 
+/* ------------------------- SEO Service Page ----------------------  */
+
+/* Hero Section */
+.seo-img-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.min-h {
+  min-height: auto;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 58px);
+}
+
+.reverse-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 40px;
+}
+
+.whyus-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.seo-whyus-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+/* CTA Section */
+
+.c-cta {
+  min-height: auto;
+}
+
+.cta-com-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.lft-content-wrapper,
+.rht-content-wrapper {
+  width: 50%;
+}
+
+.rht-content-wrapper {
+  align-items: flex-start;
+}
+
+.lft-content-wrapper img {
+  width: 100%;
+  height: 300px;
+}
+
+/* ------------------------ SEM Page -------------------- */
+
+.sem-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sem-row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.htw-gap {
+  gap: 40px;
+}
+
+.sem-card {
+  display: flex;
+  width: 100%;
+  padding: 32px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
 /*------------------ Media Queries ------------------- */
 
 @media only screen and (max-width: 768px) {
@@ -821,6 +919,15 @@ a {
     flex-direction: column;
   }
 
+  .cta-com-wrapper {
+    flex-direction: column;
+    gap: var(--spacing-32px);
+  }
+
+  .lft-content-wrapper,
+  .rht-content-wrapper {
+    width: 100%;
+  }
   /* ---------------- Home Page -------------------- */
   /* Header */
   .nav-menu {
@@ -961,7 +1068,6 @@ a {
 
   /* ------------------ ABOUT US ---------------------------*/
   /* Who We Are Section */
-
   .who-are-we,
   .c-cta,
   .competitive-edge,
@@ -989,6 +1095,16 @@ a {
   .ce-row {
     flex-direction: column;
     gap: 24px;
+  }
+
+  /* --------- SEM PAGE ------------ */
+  .sem-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sem-wrapper {
+    height: 100%;
   }
 }
 
