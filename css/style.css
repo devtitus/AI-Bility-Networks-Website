@@ -61,6 +61,10 @@ body {
 
 /*------------------ Common Styles ------------------- */
 
+.pri-color-span {
+  color: var(--primary-color);
+}
+
 .h-flex {
   display: flex;
   flex-direction: row;
@@ -98,7 +102,7 @@ body {
 .v-text-wrapper-8px {
   display: inline-flex;
   flex-direction: column;
-  gap: var(--spacing-8px);
+  gap: 16px;
 }
 
 section {
@@ -107,8 +111,8 @@ section {
 }
 
 .sub-special-heading {
-  font-size: var(--typo-20px);
-  line-height: calc(var(--typo-20px) * 1.4);
+  font-size: 1rem;
+  line-height: 1.5rem;
   color: var(--primary-color);
 }
 
@@ -117,9 +121,10 @@ section {
 .hightlights-txt,
 .overview-paragraph,
 .testimonial-text {
+  font-size: 1rem;
   text-align: justify;
   white-space: normal;
-  line-height: calc(var(--typo-16px) * 1.3);
+  line-height: 1.5rem;
 }
 
 /*------------------ Header Section ------------------- */
@@ -151,7 +156,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 0.625rem 1.5rem;
 }
 
 .nav-menu {
@@ -162,7 +167,8 @@ a {
 }
 
 .nav-link {
-  font-size: 1.6rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 400;
   color: #475569;
 }
@@ -248,28 +254,29 @@ a {
 .hero-top-wrapper {
   width: 100%;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .eyebrow-txt {
-  font-size: var(--typo-14px);
+  font-size: 0.875rem;
+  line-height: 1rem;
   color: var(--primary-color);
   font-weight: 600;
 }
 
 .hero-heading {
-  font-size: var(--typo-48px);
-  line-height: calc(var(--typo-48px) * 1.2);
+  font-size: 4rem;
+  line-height: 4.5rem;
   font-weight: 700;
 }
 
 .hero-text {
-  font-size: var(--typo-16px);
-  line-height: calc(var(--typo-16px) * 1.4);
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .left-wrapper,
 .right-wrapper {
-  justify-content: center;
   width: 50%;
 }
 
@@ -284,6 +291,8 @@ a {
 
 .hero-btn {
   padding: var(--spacing-12px) var(--spacing-16px);
+  font-size: 1rem;
+  line-height: 1.5rem;
   border: none;
   cursor: pointer;
 }
@@ -355,7 +364,8 @@ a {
   justify-content: space-between;
 }
 
-.overview-wrapper img {
+.overview-wrapper figure img {
+  object-fit: cover;
   border-radius: var(--border-radius-16px);
 }
 
@@ -378,6 +388,13 @@ a {
 .overview-btn {
   padding: var(--spacing-14px) var(--spacing-18px);
   border: 1px solid var(--primary-color);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.overview-heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 
 /*------------------ Highlights Section ------------------- */
@@ -419,6 +436,26 @@ a {
   justify-content: space-between;
   align-self: stretch;
   flex: 1 0 0;
+}
+
+.highlights-heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.hightlights-txt {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.highlight-card-heading {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.highlight-card-paragraph {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 /*------------------ Service Section ------------------- */
@@ -464,6 +501,28 @@ a {
   padding: var(--spacing-14px) var(--spacing-18px);
   border: 1px solid var(--primary-color);
   border-radius: var(--border-radius-6px);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.service-heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.service-paragraph {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.service-card-title {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.service-card-paragraph {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 /*------------------ Testimonial Section ------------------- */
@@ -494,6 +553,27 @@ a {
 .testimonial-author-wrapper {
   gap: var(--spacing-8px);
   align-items: center;
+}
+
+.testimonial-heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.testimonial-paragraph {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.designation-text {
+  font-size: 1rem;
+  font-weight: medium;
+  line-height: 1.5rem;
 }
 
 /*------------------ Contact Section ------------------- */
@@ -569,6 +649,16 @@ a {
 
 .cta-section-btn {
   padding: var(--spacing-14px) var(--spacing-16px);
+}
+
+.cta-left-heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.cta-paragraph {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 /*------------------ Footer Section ------------------- */
@@ -650,6 +740,18 @@ a {
   height: 400px;
 }
 
+.sp-t {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.sp-p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
 /* Who Are We Section */
 
 .who-are-we {
@@ -662,9 +764,14 @@ a {
   gap: 40px;
 }
 
-.waw-wrapper img {
+.waw-wrapper figure {
   width: 50%;
-  height: 100%;
+}
+
+.waw-wrapper figure img {
+  width: 100%;
+  border-radius: 32px;
+  object-fit: cover;
 }
 
 .waw-wrapper .waw-content-wrapper {
@@ -678,6 +785,22 @@ a {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.waw-heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.sub-wawc-wrapper span {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  color: #820300;
+}
+
+.sub-wawc-wrapper p {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 /* AI-BN Objective Section */
@@ -725,6 +848,33 @@ a {
 .obj-card p {
   text-align: center;
   padding: 0 16px;
+}
+
+.obj-heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.obj-heading-wrapper p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.obj-number {
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: #820300;
+}
+
+.obj-card span {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  font-weight: 600;
+}
+
+.obj-card p {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 /* Competitive Edge Section */
@@ -779,6 +929,32 @@ a {
   gap: 8px;
 }
 
+.ce-heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.heading-wrapper p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.ce-text-wrapper span {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  font-weight: 600;
+  color: #820300;
+}
+
+.ce-text-wrapper p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.ce-card figure img {
+  border-radius: 8px;
+}
+
 /* Common CTA Section */
 .c-cta {
   background: #820300;
@@ -806,13 +982,37 @@ a {
   height: 12px;
 }
 
+.c-cta-heading {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: white;
+}
+
+.c-cta-btn {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: black;
+  font-weight: 400;
+}
+
 /* ------------------------- SEO Service Page ----------------------  */
 
 /* Hero Section */
-.seo-img-wrapper img {
+.seo-img-wrapper figure {
   width: 100%;
-  height: auto;
+}
+
+.seo-img-wrapper figure img {
+  width: 100%;
   object-fit: cover;
+}
+
+.seo-sec-2 {
+  width: 50%;
+}
+
+.seo-sec-2 .hero-img-wrapper {
+  justify-content: flex-start;
 }
 
 .min-h {
@@ -821,7 +1021,6 @@ a {
 
 .hero-section {
   display: flex;
-  flex-direction: row;
   min-height: calc(100vh - 58px);
 }
 
@@ -847,6 +1046,11 @@ a {
   display: flex;
   flex-direction: row;
   gap: 6px;
+}
+
+.v-text-wrapper-8px h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 
 /* CTA Section */
@@ -902,6 +1106,45 @@ a {
   gap: 8px;
   border-radius: 8px;
   border: 1px solid #ddd;
+}
+
+/* --------------------- CONTACT PAGE ------------------------ */
+
+.contact-hero {
+  min-height: calc(100vh - 58px);
+}
+
+.ch-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.ch-wrapper p {
+  text-align: center;
+}
+
+.eb-txt {
+  display: inline-flex;
+  padding: 10px 16px;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.ch-heading {
+  text-align: center;
+  font-size: var(--typo-48px);
+  font-weight: 800;
+}
+
+.con-head-para-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 /*------------------ Media Queries ------------------- */
