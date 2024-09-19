@@ -265,19 +265,21 @@ a {
 }
 
 .hero-heading {
-  font-size: 4rem;
-  line-height: 4.5rem;
+  font-size: 3rem;
+  line-height: 3.5rem;
   font-weight: 700;
 }
 
 .hero-text {
   font-size: 1rem;
   line-height: 1.5rem;
+  padding-right: 4rem;
 }
 
 .left-wrapper,
 .right-wrapper {
   width: 50%;
+  justify-content: center;
 }
 
 .left-wrapper {
@@ -429,13 +431,13 @@ a {
 .right-highlights-wrapper {
   gap: var(--spacing-40px);
   width: 50%;
-  height: 433px;
 }
 
 .highlight-card-container {
   justify-content: space-between;
   align-self: stretch;
   flex: 1 0 0;
+  gap: 40px;
 }
 
 .highlights-heading {
@@ -456,6 +458,7 @@ a {
 .highlight-card-paragraph {
   font-size: 1rem;
   line-height: 1.5rem;
+  text-align: left;
 }
 
 /*------------------ Service Section ------------------- */
@@ -568,6 +571,7 @@ a {
 .testimonial-text {
   font-size: 1rem;
   line-height: 1.5rem;
+  text-align: left;
 }
 
 .designation-text {
@@ -729,6 +733,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-8px);
+  align-items: flex-start;
 }
 
 .abt-rht-wrapper {
@@ -737,7 +742,7 @@ a {
 
 .abt-img-wrapper img {
   width: 100%;
-  height: 400px;
+  align-items: flex-start;
 }
 
 .sp-t {
@@ -967,12 +972,18 @@ a {
   gap: 40px;
 }
 
+.c-cta-wrapper p {
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .c-cta-btn {
   display: flex;
   padding: 14px 18px;
   justify-content: center;
   align-items: center;
-  gap: 3px;
+  gap: 8px;
   background: white;
   border-radius: 6px;
 }
@@ -1076,7 +1087,8 @@ a {
 
 .lft-content-wrapper img {
   width: 100%;
-  height: 300px;
+  object-fit: cover;
+  border-radius: 32px;
 }
 
 /* ------------------------ SEM Page -------------------- */
@@ -1106,6 +1118,30 @@ a {
   gap: 8px;
   border-radius: 8px;
   border: 1px solid #ddd;
+}
+
+.sem-card span {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  font-weight: 600;
+}
+
+.sem-card p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.sem-img-wrapper figure img {
+  width: auto;
+  object-fit: cover;
+  border-radius: 32px;
+  align-items: flex-start;
+}
+
+.border-none {
+  border: none;
+  background: none;
+  box-shadow: none;
 }
 
 /* --------------------- CONTACT PAGE ------------------------ */
@@ -1149,7 +1185,7 @@ a {
 
 /*------------------ Media Queries ------------------- */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1023px) {
   /* Common Styles */
   .h-padding {
     padding: var(--spacing-16px) var(--spacing-16px);
@@ -1215,10 +1251,6 @@ a {
     width: 100%;
   }
 
-  .logo-group {
-    width: 100%;
-  }
-
   .logo-track {
     width: calc(100% * 3);
   }
@@ -1227,34 +1259,82 @@ a {
   .overview-wrapper {
     flex-direction: column;
     gap: var(--spacing-32px);
+    overflow-x: hidden;
   }
 
-  .overview-wrapper img {
-    width: 100%;
+  .overview-wrapper figure img {
+    width: 800px;
+    height: 400px;
     height: auto;
+    aspect-ratio: 16/9;
     object-fit: cover;
   }
 
+  .overview-section {
+    position: relative;
+  }
+
   .overview-card {
-    position: static;
-    width: 100%;
+    position: absolute;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: 15%;
+    width: 80%;
+  }
+
+  .overview-btn-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   /* Highlights Section */
   .left-higlights-wrapper,
   .right-highlights-wrapper {
     width: 100%;
+    align-items: flex-start;
+  }
+
+  .left-higlights-wrapper p {
+    text-align: left;
   }
   .right-highlights-wrapper {
     height: auto;
   }
 
+  .highlight-card-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .highlights-card {
+    width: 100%;
+  }
+
+  .service-card-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+
+  .service-heading {
+    text-align: center;
+    padding-inline: 4rem;
+  }
+
   /* Testimonials Section */
   .testimonial-card-wrapper {
-    grid-template-columns: auto;
+    grid-template-columns: auto auto;
   }
   .testimonial-author-wrapper {
     align-items: flex-start;
+  }
+
+  .testimonial-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   /* CTA Section */
@@ -1309,6 +1389,30 @@ a {
     padding: 0;
   }
 
+  .hero-img-wrapper {
+    justify-content: center;
+  }
+
+  .left-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .v-text-wrapper-8px {
+    align-items: center;
+  }
+
+  .v-text-wrapper-8px .hero-heading {
+    text-align: center;
+  }
+
+  .v-text-wrapper-8px p {
+    text-align: center;
+    padding-inline: 6rem;
+  }
+
   /* ------------------ ABOUT US ---------------------------*/
   /* Who We Are Section */
   .who-are-we,
@@ -1345,9 +1449,56 @@ a {
     flex-direction: column;
     gap: 24px;
   }
-
   .sem-wrapper {
     height: 100%;
+  }
+  .abt-left-wrapper {
+    justify-content: center;
+    align-items: center;
+  }
+  .abt-text-wrapper {
+    align-items: center;
+  }
+  .abt-text-wrapper .hero-heading {
+    text-align: center;
+    padding-inline: 4rem;
+  }
+  .abt-text-wrapper p {
+    text-align: center;
+    padding-inline: 4rem;
+  }
+  .social-proofs .sp-c .sp-tp-r {
+    align-items: center;
+  }
+  .abt-h-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .abt-img-wrapper img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+  .waw-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .waw-wrapper figure img {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  .obj-content-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 24px;
+  }
+  .ce-content-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .social-proofs {
+    width: 100%;
   }
 }
 
@@ -1361,6 +1512,10 @@ a {
   .h-padding {
     padding-top: var(--spacing-56px);
     padding-bottom: var(--spacing-56px);
+  }
+
+  .hero-section {
+    justify-content: center;
   }
 
   /*------------------ Services Section ------------------- */
@@ -1377,6 +1532,55 @@ a {
   .service-card-title {
     font-size: 1em;
   }
+  .who-are-we,
+  .competitive-edge,
+  .aibn-objective {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  section,
+  .hero-section,
+  .who-are-we,
+  .aibn-objective,
+  .competitive-edge {
+    min-height: auto;
+  }
+  .abt-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+  }
+  .waw-wrapper figure img {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+  .waw-wrapper .waw-content-wrapper {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hero-heading,
+  .v-text-wrapper-8px .hero-heading {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+
+  .overview-heading,
+  .service-heading,
+  .highlights-heading,
+  .testimonial-heading,
+  .cta-left-heading,
+  .waw-heading,
+  .obj-heading,
+  .ce-heading,
+  .c-cta-heading,
+  .v-text-wrapper-8px h2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
 }
 
 @media screen and (min-width: 1920px) {
@@ -1385,6 +1589,9 @@ a {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+  }
+  .hero-section {
+    justify-content: center;
   }
   header,
   footer {
@@ -1417,5 +1624,68 @@ a {
   }
   .cta-right-wrapper {
     padding: var(--spacing-64px) var(--spacing-48px);
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .left-wrapper {
+    align-items: flex-start;
+  }
+  .v-text-wrapper-8px .hero-heading {
+    text-align: left;
+    padding-inline: 0rem;
+  }
+  .v-text-wrapper-8px p {
+    padding-inline: 0;
+    text-align: left;
+  }
+  .hero-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+  .logo-group {
+    width: 100%;
+  }
+  .overview-card {
+    position: static;
+    width: 100%;
+    padding: 2rem 1.2rem;
+  }
+  .highlight-card-container {
+    flex-direction: column;
+  }
+  .service-heading {
+    padding-inline: 0;
+    text-align: left;
+  }
+  .service-card-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .service-section,
+  .highlights-section,
+  .overview-section,
+  .hero-section,
+  .testimonial-section,
+  .cta-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .testimonial-card-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .overview-wrapper figure img {
+    width: 100%;
+    height: auto;
+  }
+  .obj-content-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .ce-content-wrapper {
+    display: flex;
+    flex-direction: column;
   }
 }
