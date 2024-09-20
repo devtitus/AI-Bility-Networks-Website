@@ -1173,14 +1173,27 @@ a {
 
 .ch-heading {
   text-align: center;
-  font-size: var(--typo-48px);
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4rem;
 }
 
 .con-head-para-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
+}
+
+.con-head-para-wrapper h2 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  color: var(--primary-color);
+}
+
+.con-head-para-wrapper p,
+.ch-wrapper p {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 /*------------------ Media Queries ------------------- */
@@ -1263,24 +1276,15 @@ a {
   }
 
   .overview-wrapper figure img {
-    width: 800px;
-    height: 400px;
+    width: 100%;
     height: auto;
     aspect-ratio: 16/9;
     object-fit: cover;
   }
 
-  .overview-section {
-    position: relative;
-  }
-
   .overview-card {
-    position: absolute;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: 15%;
-    width: 80%;
+    position: static;
+    width: 100%;
   }
 
   .overview-btn-wrapper {
@@ -1517,6 +1521,69 @@ a {
     align-items: center;
     justify-content: center;
   }
+  .left-wrapper {
+    gap: 12px;
+  }
+  .v-text-wrapper-8px {
+    gap: 8px;
+  }
+  .hero-top-wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .hero-section {
+    gap: 16px;
+  }
+  .hero-heading {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .highlights-wrapper,
+  .overview-wrapper,
+  .service-container,
+  .testimonial-container,
+  .cta-container,
+  .waw-wrapper,
+  .hero-top-wrapper,
+  .obj-wrapper,
+  .ce-wrapper,
+  .ch-wrapper,
+  .cta-com-wrapper {
+    padding: 40px;
+  }
+  .con-head-para-wrapper {
+    align-items: center;
+  }
+  .con-head-para-wrapper p {
+    text-align: center;
+  }
+  .waw-wrapper figure {
+    width: 100%;
+  }
+  .ch-heading {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .seo-sec-2 {
+    align-items: flex-start;
+  }
+  .v-text-wrapper-8px p {
+    text-align: left;
+    padding-inline: 0rem;
+  }
+  .seo-sec-2 .hero-img-wrapper,
+  .right-wrapper .seo-img-wrapper {
+    width: 100%;
+  }
+  .seo-roadmap-wrapper {
+    align-items: flex-start;
+  }
+  .seo-left-wrapper {
+    align-items: flex-start;
+  }
+  .seo-left-wrapper .v-text-wrapper-8px .hero-heading {
+    text-align: left;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -1582,13 +1649,24 @@ a {
   .sem-img-wrapper figure img {
     width: 100%;
   }
+  .hero-heading {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .ch-heading {
+    padding-inline: 12rem;
+  }
+  .sem-img-wrapper figure img {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .hero-heading,
   .v-text-wrapper-8px .hero-heading {
-    font-size: 4rem;
-    line-height: 4.5rem;
+    font-size: 3rem;
+    line-height: 3.5rem;
   }
 
   .overview-heading,
@@ -1604,22 +1682,32 @@ a {
     font-size: 2.5rem;
     line-height: 3rem;
   }
-  .seo-img-wrapper figure img,
-  .sem-img-wrapper figure img {
+  .seo-img-wrapper figure img {
     width: 100%;
     height: auto;
     object-fit: cover;
     aspect-ratio: 4/3;
   }
+  .sem-img-wrapper figure img,
+  .sem-img-wrapper figure .hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+  }
+  .htw-gap {
+    align-items: center;
+  }
+  .ch-heading {
+    padding-inline: 16rem;
+  }
+  .v-text-wrapper-8px h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
 }
 
 @media screen and (min-width: 1920px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-  }
   .hero-section {
     justify-content: center;
   }
@@ -1654,6 +1742,58 @@ a {
   }
   .cta-right-wrapper {
     padding: var(--spacing-64px) var(--spacing-48px);
+  }
+  .hero-text,
+  .overview-paragraph,
+  .hightlights-txt,
+  .highlight-card-paragraph,
+  .service-card-paragraph,
+  .cta-paragraph,
+  .email-sub-text,
+  .phone-sub-text,
+  .tagline,
+  a,
+  .copyright-text,
+  .right-text,
+  .social-media-title,
+  .input-heading,
+  .testimonial-text,
+  .testimonial-paragraph,
+  .service-paragraph,
+  .nav-link,
+  .sub-special-heading,
+  .sub-wawc-wrapper p,
+  .obj-heading-wrapper p,
+  .obj-card p,
+  .heading-wrapper p,
+  .ce-text-wrapper p,
+  .sp-p,
+  .sub-wawc-wrapper span,
+  .con-head-para-wrapper p,
+  .ch-wrapper p,
+  .cta-paragraph {
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+  }
+
+  .highlight-card-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .hero-heading,
+  .v-text-wrapper-8px .hero-heading {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+  .ch-heading {
+    padding-inline: 24rem;
+  }
+  .sem-img-wrapper figure img,
+  .sem-img-wrapper figure .hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 4/3;
   }
 }
 
@@ -1698,9 +1838,13 @@ a {
   .overview-section,
   .hero-section,
   .testimonial-section,
-  .cta-section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+  .cta-section,
+  .who-are-we,
+  .aibn-objective,
+  .competitive-edge,
+  .c-cta {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   .testimonial-card-wrapper {
     display: flex;
@@ -1717,5 +1861,61 @@ a {
   .ce-content-wrapper {
     display: flex;
     flex-direction: column;
+  }
+  .v-text-wrapper-8px {
+    align-items: flex-start;
+  }
+
+  .hero-heading {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .hero-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .left-wrapper {
+    gap: 24px;
+  }
+  .highlights-wrapper,
+  .overview-wrapper,
+  .service-container,
+  .testimonial-container,
+  .cta-container,
+  .hero-top-wrapper,
+  .waw-wrapper,
+  .obj-wrapper,
+  .ce-wrapper,
+  .cta-com-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .overview-heading,
+  .highlight-card-heading,
+  .service-card-title,
+  .service-heading,
+  .highlights-heading,
+  .ch-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .overview-paragraph {
+    text-align: left;
+  }
+  .c-cta-wrapper {
+    align-items: flex-start;
+    padding-inline: 10px;
+  }
+  .waw-wrapper figure {
+    width: 100%;
+  }
+  .ch-wrapper,
+  .con-head-para-wrapper {
+    align-items: flex-start;
+  }
+  .ch-heading,
+  .ch-wrapper p,
+  .con-head-para-wrapper p {
+    text-align: left;
   }
 }
