@@ -57,9 +57,21 @@
 body {
   font-family: "Barlow", sans-serif;
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 /*------------------ Common Styles ------------------- */
+
+.hero-section,
+.contact-hero {
+  margin-top: 4.5rem;
+}
+
+.client-logo {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+}
 
 .pri-color-span {
   color: var(--primary-color);
@@ -130,7 +142,8 @@ section {
 
 header {
   background: white;
-  position: sticky;
+  width: 100%;
+  position: fixed;
   top: 0;
   z-index: 999;
   border-bottom: 1px solid #e2e8f0;
@@ -1704,6 +1717,10 @@ a {
   .v-text-wrapper-8px h2 {
     font-size: 2rem;
     line-height: 2.5rem;
+  }
+  .obj-heading-wrapper p {
+    text-align: center;
+    padding-inline: 16rem;
   }
 }
 
