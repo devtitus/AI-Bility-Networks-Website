@@ -68,8 +68,7 @@ body {
 }
 
 .client-logo {
-  object-fit: cover;
-  aspect-ratio: 1/1;
+  object-fit: contain;
   border-radius: 8px;
 }
 
@@ -119,6 +118,7 @@ body {
 
 section {
   align-content: center;
+  overflow-x: hidden;
 }
 
 .sub-special-heading {
@@ -400,7 +400,7 @@ a {
 }
 
 .overview-btn {
-  padding: var(--spacing-14px) var(--spacing-18px);
+  padding: 8px 16px;
   border: 1px solid var(--primary-color);
   font-size: 1rem;
   line-height: 1.5rem;
@@ -513,7 +513,7 @@ a {
 }
 
 .service-card-btn {
-  padding: var(--spacing-14px) var(--spacing-18px);
+  padding: 8px 16px;
   border: 1px solid var(--primary-color);
   border-radius: var(--border-radius-6px);
   font-size: 1rem;
@@ -665,6 +665,7 @@ a {
 
 .cta-section-btn {
   padding: var(--spacing-14px) var(--spacing-16px);
+  border: none;
 }
 
 .cta-left-heading {

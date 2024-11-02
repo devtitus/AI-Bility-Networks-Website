@@ -1,0 +1,16 @@
+User-agent: Googlebot
+Disallow: /private/
+Disallow: /admin/
+Disallow: /login/
+
+User-agent: Bingbot
+Disallow: /private/
+Disallow: /admin/
+Disallow: /login/
+
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Disallow: /login/
+
+Sitemap: https://www.aibilitynetworks.com/sitemap.xml
