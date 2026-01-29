@@ -198,12 +198,14 @@ Professional contact functionality:
 | **Analytics** | Google Analytics 4 | Traffic and behavior tracking |
 | **Forms** | Web3Forms API | Contact form handling |
 | **Icons** | SVG Format | Scalable vector graphics |
+| **URL Routing** | Netlify _redirects | Clean URL management |
 
 ### File Structure
 
 ```
 Website/
 ├── index.html              # Homepage
+├── _redirects              # Netlify URL routing for clean URLs
 ├── pages/
 │   ├── about.html          # About page
 │   ├── contact.html        # Contact page

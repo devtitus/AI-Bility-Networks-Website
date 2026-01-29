@@ -251,28 +251,96 @@ Current favicon files are in `favicon_io/` directory. To customize:
 
 ## Deployment Options
 
-### Option 1: Netlify (Recommended)
+### Option 1: Netlify (Recommended for Clean URLs)
 
-1. **Create account** at [netlify.com](https://netlify.com)
-2. **Drag and drop** the `Website` folder to Netlify dashboard
-3. **Custom domain** (optional):
-   - Go to Domain Management
-   - Add custom domain
-   - Configure DNS settings
+Netlify is an excellent choice for static websites and provides **built-in support for clean URLs** through the `_redirects` file.
 
-**Auto-deploy from Git:**
-```bash
-# Push to GitHub
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin <your-github-repo>
-git push -u origin main
+#### Step 1: Create _redirects File
+
+We've already created the `_redirects` file in the project root. This file maps clean URLs to their actual HTML file locations:
+
+```apache
+# Netlify Redirect Configuration
+/aboutus                   /pages/about.html          200
+/contactus                 /pages/contact.html        200
+/contentmanagement         /pages/content.html        200
+/searchenginemarketing     /pages/sem.html            200
+/searchengineoptimisation  /pages/seo.html            200
+/socialmediamanagement     /pages/social.html         200
 ```
 
-1. Connect repository in Netlify
-2. Configure build settings (no build command needed for static site)
-3. Deploy
+**What this does:**
+- When someone visits `/aboutus`, Netlify serves `/pages/about.html`
+- The browser URL stays clean: `yoursite.com/aboutus`
+- No JavaScript required - server-side routing
+
+#### Step 2: Deploy to Netlify
+
+**Option A: Drag and Drop (Quickest)**
+
+1. Go to [Netlify](https://netlify.com) and sign up/login
+2. Drag the entire `Website` folder to the drop zone
+3. Netlify will automatically detect the `_redirects` file
+4. Your site is live with clean URLs!
+
+**Option B: Connect to GitHub (Recommended)**
+
+1. Push your code to GitHub:
+   ```bash
+   git init
+   git add .
+   git commit -m "Add Netlify _redirects for clean URLs"
+   git remote add origin https://github.com/yourusername/your-repo.git
+   git push -u origin main
+   ```
+
+2. In Netlify dashboard:
+   - Click "Add new site" → "Import an existing project"
+   - Select your GitHub repository
+   - Configure settings:
+     - **Build command:** (leave empty - no build needed)
+     - **Publish directory:** `.`
+   - Click "Deploy site"
+
+3. **Critical: Add redirect rules**
+   - Go to Site Settings → Build & deploy
+   - Scroll to "Post processing"
+   - Netlify should auto-detect the `_redirects` file
+
+#### Step 3: Configure Custom Domain (Optional)
+
+1. Go to "Domain Management" in Netlify
+2. Click "Add custom domain"
+3. Enter your domain (e.g., `aibility-networks.com`)
+4. Update DNS settings as instructed
+
+#### Step 4: SSL Certificate
+
+Netlify automatically provides free SSL certificates via Let's Encrypt.
+
+**To enable HTTPS:**
+- Go to Domain Management
+- Click "Enable HTTPS" next to your custom domain
+- Certificate will be provisioned automatically
+
+#### Step 5: Netlify Specific Features
+
+**Pretty URLs (Clean URLs)**
+
+The `_redirects` file with `200` status codes ensures:
+- `/aboutus` serves `/pages/about.html`
+- URL stays clean in browser
+- SEO-friendly (no duplicate content)
+
+**Form Handling**
+
+Netlify also offers form handling:
+- Add `netlify` attribute to forms:
+  ```html
+  <form name="contact" netlify>
+  ```
+- Netlify will automatically capture submissions
+- View submissions in Netlify dashboard
 
 ### Option 2: Vercel
 

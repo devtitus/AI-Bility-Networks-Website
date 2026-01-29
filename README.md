@@ -52,9 +52,10 @@ AI-Bility Networks is a premier digital marketing agency website specializing in
 ```
 Website/
 ├── 📄 index.html              # Homepage with complete service overview
+├── 📄 _redirects              # Netlify URL routing configuration (clean URLs)
 ├── 📄 robot.txt               # Search engine crawling instructions
 ├── 📄 sitemap.xml             # XML sitemap for search engines
-├── 📄 .htaccess              # Apache server configuration
+├── 📄 .htaccess              # Apache server configuration (cPanel)
 ├── 📄 .hintrc                # Hint configuration file
 │
 ├── 📁 pages/                  # Service and utility pages
@@ -245,7 +246,7 @@ The website can be deployed to any static hosting platform:
 
 | Platform | Instructions |
 |----------|-------------|
-| **Netlify** | Drag and drop the `Website` folder |
+| **Netlify** | Drag & drop or connect GitHub. Auto-detects `_redirects` for clean URLs |
 | **Vercel** | Connect GitHub repository or drag & drop |
 | **GitHub Pages** | Push to repository, enable Pages in settings |
 | **Firebase Hosting** | Initialize firebase, deploy with `firebase deploy` |
